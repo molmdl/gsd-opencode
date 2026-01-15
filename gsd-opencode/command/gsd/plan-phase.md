@@ -3,11 +3,11 @@ name: gsd:plan-phase
 description: Create detailed execution plan for a phase (PLAN.md)
 argument-hint: "[phase]"
 allowed-tools:
-  - Read
-  - Bash
-  - Write
-  - Glob
-  - Grep
+  - read
+  - bash
+  - write
+  - glob
+  - grep
   - question
   - webfetch
   - mcp__context7__*
@@ -16,21 +16,21 @@ allowed-tools:
 <objective>
 Create executable phase prompt with discovery, context injection, and task breakdown.
 
-Purpose: Break down roadmap phases into concrete, executable PLAN.md files that Claude can execute.
+Purpose: Break down roadmap phases into concrete, executable PLAN.md files that OpenCode can execute.
 Output: One or more PLAN.md files in the phase directory (.planning/phases/XX-name/{phase}-{plan}-PLAN.md)
 </objective>
 
 <execution_context>
-@~/.config/opencode/get-shit-done/workflows/plan-phase.md
-@~/.config/opencode/get-shit-done/templates/phase-prompt.md
-@~/.config/opencode/get-shit-done/references/plan-format.md
-@~/.config/opencode/get-shit-done/references/scope-estimation.md
-@~/.config/opencode/get-shit-done/references/checkpoints.md
-@~/.config/opencode/get-shit-done/references/tdd.md
+@~/.config/opencode/gsd-opencode/workflows/plan-phase.md
+@~/.config/opencode/gsd-opencode/templates/phase-prompt.md
+@~/.config/opencode/gsd-opencode/references/plan-format.md
+@~/.config/opencode/gsd-opencode/references/scope-estimation.md
+@~/.config/opencode/gsd-opencode/references/checkpoints.md
+@~/.config/opencode/gsd-opencode/references/tdd.md
 </execution_context>
 
 <context>
-Phase number: $ARGUMENTS (optional - auto-detects next unplanned phase if not provided)
+Phase number: ($ARGUMENTS) (optional - auto-detects next unplanned phase if not provided)
 
 **Load project state first:**
 @.planning/STATE.md
@@ -47,7 +47,7 @@ Check for `.planning/codebase/` and load relevant documents based on phase type.
 
 <process>
 1. Check .planning/ directory exists (error if not - user should run /gsd:new-project)
-2. If phase number provided via $ARGUMENTS, validate it exists in roadmap
+2. If phase number provided via ($ARGUMENTS), validate it exists in roadmap
 3. If no phase number, detect next unplanned phase from roadmap
 4. Follow plan-phase.md workflow:
    - Load project state and accumulated decisions
@@ -62,6 +62,6 @@ Check for `.planning/codebase/` and load relevant documents based on phase type.
 
 - One or more PLAN.md files created in .planning/phases/XX-name/
 - Each plan has: objective, execution_context, context, tasks, verification, success_criteria, output
-- Tasks are specific enough for Claude to execute
+- Tasks are specific enough for OpenCode to execute
 - User knows next steps (execute plan or review/adjust)
   </success_criteria>

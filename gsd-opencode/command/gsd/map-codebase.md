@@ -3,12 +3,12 @@ name: gsd:map-codebase
 description: Analyze codebase with parallel explore agents to produce .planning/codebase/ documents
 argument-hint: "[optional: specific area to map, e.g., 'api' or 'auth']"
 allowed-tools:
-  - Read
-  - Bash
-  - Glob
-  - Grep
-  - Write
-  - Task
+  - read
+  - bash
+  - glob
+  - grep
+  - write
+  - task
 ---
 
 <objective>
@@ -20,18 +20,18 @@ Output: .planning/codebase/ folder with 7 structured documents about the codebas
 </objective>
 
 <execution_context>
-@~/.config/opencode/get-shit-done/workflows/map-codebase.md
-@~/.config/opencode/get-shit-done/templates/codebase/stack.md
-@~/.config/opencode/get-shit-done/templates/codebase/architecture.md
-@~/.config/opencode/get-shit-done/templates/codebase/structure.md
-@~/.config/opencode/get-shit-done/templates/codebase/conventions.md
-@~/.config/opencode/get-shit-done/templates/codebase/testing.md
-@~/.config/opencode/get-shit-done/templates/codebase/integrations.md
-@~/.config/opencode/get-shit-done/templates/codebase/concerns.md
+@~/.config/opencode/gsd-opencode/workflows/map-codebase.md
+@~/.config/opencode/gsd-opencode/templates/codebase/stack.md
+@~/.config/opencode/gsd-opencode/templates/codebase/architecture.md
+@~/.config/opencode/gsd-opencode/templates/codebase/structure.md
+@~/.config/opencode/gsd-opencode/templates/codebase/conventions.md
+@~/.config/opencode/gsd-opencode/templates/codebase/testing.md
+@~/.config/opencode/gsd-opencode/templates/codebase/integrations.md
+@~/.config/opencode/gsd-opencode/templates/codebase/concerns.md
 </execution_context>
 
 <context>
-Focus area: $ARGUMENTS (optional - if provided, tells agents to focus on specific subsystem)
+Focus area: ($ARGUMENTS) (optional - if provided, tells agents to focus on specific subsystem)
 
 **Load project state if exists:**
 Check for .planning/STATE.md - loads context if project already initialized

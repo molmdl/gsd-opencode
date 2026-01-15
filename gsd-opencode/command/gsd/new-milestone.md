@@ -12,12 +12,12 @@ Output: New milestone in ROADMAP.md, updated STATE.md, phase directories created
 </objective>
 
 <execution_context>
-@~/.config/opencode/get-shit-done/workflows/create-milestone.md
-@~/.config/opencode/get-shit-done/templates/roadmap.md
+@~/.config/opencode/gsd-opencode/workflows/create-milestone.md
+@~/.config/opencode/gsd-opencode/templates/roadmap.md
 </execution_context>
 
 <context>
-Milestone name: $ARGUMENTS (optional - will prompt if not provided)
+Milestone name: ($ARGUMENTS) (optional - will prompt if not provided)
 
 **Load project state first:**
 @.planning/STATE.md

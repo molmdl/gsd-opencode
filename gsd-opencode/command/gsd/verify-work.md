@@ -3,30 +3,30 @@ name: gsd:verify-work
 description: Guide manual user acceptance testing of recently built features
 argument-hint: "[optional: phase or plan number, e.g., '4' or '04-02']"
 allowed-tools:
-  - Read
-  - Bash
-  - Glob
-  - Grep
-  - Edit
-  - Write
+  - read
+  - bash
+  - glob
+  - grep
+  - edit
+  - write
   - question
 ---
 
 <objective>
 Guide user through manual acceptance testing of recently built features.
 
-Purpose: Validate that what Claude thinks was built actually works from user's perspective. The USER performs all testing — Claude generates test checklist, guides process, and captures issues.
+Purpose: Validate that what OpenCode thinks was built actually works from user's perspective. The USER performs all testing — OpenCode generates a test checklist, guides process, and captures issues.
 
 Output: Validation of features, any issues logged to phase-scoped ISSUES.md
 </objective>
 
 <execution_context>
-@~/.config/opencode/get-shit-done/workflows/verify-work.md
-@~/.config/opencode/get-shit-done/templates/uat-issues.md
+@~/.config/opencode/gsd-opencode/workflows/verify-work.md
+@~/.config/opencode/gsd-opencode/templates/uat-issues.md
 </execution_context>
 
 <context>
-Scope: $ARGUMENTS (optional)
+Scope: ($ARGUMENTS) (optional)
 - If provided: Test specific phase or plan (e.g., "4" or "04-02")
 - If not provided: Test most recently completed plan
 

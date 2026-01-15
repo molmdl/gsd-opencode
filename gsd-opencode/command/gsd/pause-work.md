@@ -2,9 +2,9 @@
 name: gsd:pause-work
 description: Create context handoff when pausing work mid-phase
 allowed-tools:
-  - Read
-  - Write
-  - Bash
+  - read
+  - write
+  - bash
 ---
 
 <objective>
@@ -120,3 +120,4 @@ To resume: /gsd:resume-work
 - [ ] Committed as WIP
 - [ ] User knows location and how to resume
 </success_criteria>
+```

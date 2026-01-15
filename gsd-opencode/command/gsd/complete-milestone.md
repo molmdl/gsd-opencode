@@ -1,11 +1,12 @@
 ---
+type: prompt
 name: gsd:complete-milestone
 description: Archive completed milestone and prepare for next version
 argument-hint: <version>
 allowed-tools:
-  - Read
-  - Write
-  - Bash
+  - read
+  - write
+  - bash
 ---
 
 <objective>
@@ -18,8 +19,8 @@ Output: Milestone archived, roadmap reorganized, git tagged.
 <execution_context>
 **Load these files NOW (before proceeding):**
 
-- @~/.config/opencode/get-shit-done/workflows/complete-milestone.md (main workflow)
-- @~/.config/opencode/get-shit-done/templates/milestone-archive.md (archive template)
+- @~/.config/opencode/gsd-opencode/workflows/complete-milestone.md (main workflow)
+- @~/.config/opencode/gsd-opencode/templates/milestone-archive.md (archive template)
   </execution_context>
 
 <context>

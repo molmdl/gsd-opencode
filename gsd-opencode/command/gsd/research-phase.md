@@ -3,20 +3,20 @@ name: gsd:research-phase
 description: Research how to implement a phase before planning
 argument-hint: "[phase]"
 allowed-tools:
-  - Read
-  - Bash
-  - Glob
-  - Grep
-  - Write
+  - read
+  - bash
+  - glob
+  - grep
+  - write
   - webfetch
-  - WebSearch
+  - websearch
   - mcp__context7__*
 ---
 
 <objective>
 Comprehensive research on HOW to implement a phase before planning.
 
-This is for niche/complex domains where Claude's training data is sparse or outdated. Research discovers:
+This is for niche/complex domains where OpenCode's training data is sparse or outdated. Research discovers:
 - What libraries exist for this problem
 - What architecture patterns experts use
 - What standard stack looks like
@@ -27,13 +27,13 @@ Output: RESEARCH.md with ecosystem knowledge that informs quality planning.
 </objective>
 
 <execution_context>
-@~/.config/opencode/get-shit-done/workflows/research-phase.md
-@~/.config/opencode/get-shit-done/templates/research.md
-@~/.config/opencode/get-shit-done/references/research-pitfalls.md
+@~/.config/opencode/gsd-opencode/workflows/research-phase.md
+@~/.config/opencode/gsd-opencode/templates/research.md
+@~/.config/opencode/gsd-opencode/references/research-pitfalls.md
 </execution_context>
 
 <context>
-Phase number: $ARGUMENTS (required)
+Phase number: ($ARGUMENTS) (required)
 
 **Load project state:**
 @.planning/STATE.md
@@ -74,7 +74,7 @@ Check for `.planning/phases/XX-name/{phase}-CONTEXT.md` - bonus context from dis
 - Standard web dev (auth, CRUD, REST APIs)
 - Well-known patterns (forms, validation, testing)
 - Simple integrations (Stripe, SendGrid with clear docs)
-- Commodity features Claude handles well
+- Commodity features OpenCode handles well
 </when_to_use>
 
 <success_criteria>
@@ -85,7 +85,7 @@ Check for `.planning/phases/XX-name/{phase}-CONTEXT.md` - bonus context from dis
 - [ ] RESEARCH.md created with ecosystem knowledge
 - [ ] Standard stack/libraries identified
 - [ ] Architecture patterns documented
-- [ ] Common pitfalls catalogueed
+- [ ] Common pitfalls catalogued
 - [ ] What NOT to hand-roll is clear
 - [ ] User knows next steps (plan phase)
 </success_criteria>

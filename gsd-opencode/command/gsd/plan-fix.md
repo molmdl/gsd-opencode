@@ -3,11 +3,11 @@ name: gsd:plan-fix
 description: Plan fixes for UAT issues from verify-work
 argument-hint: "[plan, e.g., '04-02']"
 allowed-tools:
-  - Read
-  - Bash
-  - Write
-  - Glob
-  - Grep
+  - read
+  - bash
+  - write
+  - glob
+  - grep
   - question
 ---
 
@@ -19,12 +19,12 @@ Output: {plan}-FIX.md in the phase directory, ready for execution.
 </objective>
 
 <execution_context>
-@~/.config/opencode/get-shit-done/references/plan-format.md
-@~/.config/opencode/get-shit-done/references/checkpoints.md
+@~/.config/opencode/gsd-opencode/references/plan-format.md
+@~/.config/opencode/gsd-opencode/references/checkpoints.md
 </execution_context>
 
 <context>
-Plan number: $ARGUMENTS (required - e.g., "04-02" or "09-01")
+Plan number: ($ARGUMENTS) (required - e.g., "04-02" or "09-01")
 
 **Load project state:**
 @.planning/STATE.md
@@ -36,7 +36,7 @@ Plan number: $ARGUMENTS (required - e.g., "04-02" or "09-01")
 <step name="parse">
 **Parse plan argument:**
 
-$ARGUMENTS should be a plan number like "04-02" or "09-01".
+($ARGUMENTS) should be a plan number like "04-02" or "09-01".
 Extract phase number (XX) and plan number (NN).
 
 If no argument provided:
@@ -126,8 +126,8 @@ Priority: {critical count} critical, {major count} major, {minor count} minor
 </objective>
 
 <execution_context>
-@~/.config/opencode/get-shit-done/workflows/execute-phase.md
-@~/.config/opencode/get-shit-done/templates/summary.md
+@~/.config/opencode/gsd-opencode/workflows/execute-plan.md
+@~/.config/opencode/gsd-opencode/templates/summary.md
 </execution_context>
 
 <context>

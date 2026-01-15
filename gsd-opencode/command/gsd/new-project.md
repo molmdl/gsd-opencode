@@ -2,9 +2,9 @@
 name: gsd:new-project
 description: Initialize a new project with deep context gathering and PROJECT.md
 allowed-tools:
-  - Read
-  - Bash
-  - Write
+  - read
+  - bash
+  - write
   - question
 ---
 
@@ -20,10 +20,10 @@ Creates `.planning/` with PROJECT.md and config.json.
 
 <execution_context>
 
-@~/.config/opencode/get-shit-done/references/principles.md
-@~/.config/opencode/get-shit-done/references/questioning.md
-@~/.config/opencode/get-shit-done/templates/project.md
-@~/.config/opencode/get-shit-done/templates/config.json
+@~/.config/opencode/gsd-opencode/references/principles.md
+@~/.config/opencode/gsd-opencode/references/questioning.md
+@~/.config/opencode/gsd-opencode/templates/project.md
+@~/.config/opencode/gsd-opencode/templates/config.json
 
 </execution_context>
 
@@ -228,8 +228,8 @@ Use question:
 - header: "Mode"
 - question: "How do you want to work?"
 - options:
+  - "YOLO" — Auto-approve, just execute (Recommended)
   - "Interactive" — Confirm at each step
-  - "YOLO" — Auto-approve, just execute
 
 </step>
 
@@ -248,7 +248,27 @@ Use question:
 
 **Depth controls compression tolerance, not artificial inflation.** All depths use 2-3 tasks per plan. Comprehensive means "don't compress complex work"—it doesn't mean "pad simple work to hit a number."
 
-Create `.planning/config.json` with chosen mode and depth using `templates/config.json` structure.
+</step>
+
+<step name="parallelization">
+
+Ask parallel execution preference:
+
+Use question:
+
+- header: "Parallelization"
+- question: "Enable parallel phase execution?"
+- options:
+  - "Enabled" — Run independent plans in parallel (Recommended)
+  - "Disabled" — Execute plans sequentially
+
+**Parallelization** spawns multiple agents for independent plans within a phase. Wave-based execution handles dependencies automatically. Can be changed later in config.json.
+
+</step>
+
+<step name="config">
+
+Create `.planning/config.json` with chosen mode, depth, and parallelization using `templates/config.json` structure.
 
 </step>
 
@@ -270,7 +290,7 @@ EOF
 
 <step name="done">
 
-Present completion with next steps (see ~/.config/opencode/get-shit-done/references/continuation-format.md):
+Present completion with next steps (see ~/.config/opencode/gsd-opencode/references/continuation-format.md):
 
 ```
 Project initialized:
@@ -290,7 +310,6 @@ Project initialized:
 *`/clear` first → fresh context window*
 
 ---
-
 ```
 
 </step>
@@ -310,7 +329,7 @@ Project initialized:
 - [ ] PROJECT.md captures full context with evolutionary structure
 - [ ] Requirements initialized as hypotheses (greenfield) or with inferred Validated (brownfield)
 - [ ] Key Decisions table initialized
-- [ ] config.json has workflow mode
+- [ ] config.json has workflow mode, depth, and parallelization
 - [ ] All committed to git
 
 </success_criteria>

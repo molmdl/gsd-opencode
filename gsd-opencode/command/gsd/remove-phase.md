@@ -3,16 +3,16 @@ name: gsd:remove-phase
 description: Remove a future phase from roadmap and renumber subsequent phases
 argument-hint: <phase-number>
 allowed-tools:
-  - Read
-  - Write
-  - Bash
-  - Glob
+  - read
+  - write
+  - bash
+  - glob
 ---
 
 <objective>
-Remove an unstarted future phase from roadmap and renumber all subsequent phases to maintain a clean, linear sequence.
+Remove an unstarted future phase from the roadmap and renumber all subsequent phases to maintain a clean, linear sequence.
 
-Purpose: Clean removal of work you've decided not to do, without poluting context with cancelled/deferred markers.
+Purpose: Clean removal of work you've decided not to do, without polluting context with cancelled/deferred markers.
 Output: Phase deleted, all subsequent phases renumbered, git commit as historical record.
 </objective>
 
@@ -24,8 +24,8 @@ Output: Phase deleted, all subsequent phases renumbered, git commit as historica
 <process>
 
 <step name="parse_arguments">
-Parse command arguments:
-- Argument ($ARGUMENTS) is phase number to remove (integer or decimal)
+Parse the command arguments:
+- Argument is the phase number to remove (integer or decimal)
 - Example: `/gsd:remove-phase 17` → phase = 17
 - Example: `/gsd:remove-phase 16.1` → phase = 16.1
 
@@ -66,7 +66,7 @@ Verify that target phase exists in ROADMAP.md:
 </step>
 
 <step name="validate_future_phase">
-Verify that phase is a future phase (not started):
+Verify that the phase is a future phase (not started):
 
 1. Compare target phase to current phase from STATE.md
 2. Target must be > current phase number
@@ -151,8 +151,8 @@ Delete target phase directory if it exists:
 
 ```bash
 if [ -d ".planning/phases/{target}-{slug}" ]; then
-  rm -rf ".planning/phases/{target}-${slug}"
-  echo "Deleted: .planning/phases/{target}-${slug}/"
+  rm -rf ".planning/phases/{target}-{slug}"
+  echo "Deleted: .planning/phases/{target}-{slug}/"
 fi
 ```
 
@@ -195,14 +195,14 @@ Also handle CONTEXT.md and DISCOVERY.md (these don't have phase prefixes, so no 
 <step name="update_roadmap">
 Update ROADMAP.md:
 
-1. **Remove** phase section entirely:
+1. **Remove phase section entirely:**
    - Delete from `### Phase {target}:` to next phase heading (or section end)
 
 2. **Remove from phase list:**
    - Delete line `- [ ] **Phase {target}: {Name}**` or similar
 
 3. **Remove from Progress table:**
-   - Delete of row for Phase {target}
+   - Delete row for Phase {target}
 
 4. **Renumber all subsequent phases:**
    - `### Phase 18:` → `### Phase 17:`
@@ -231,7 +231,7 @@ Update STATE.md:
 2. **Recalculate progress percentage:**
    - New percentage based on completed plans / new total plans
 
-Do NOT add a "Roadmap Evolution" note - git commit is the record.
+Do NOT add a "Roadmap Evolution" note - git commit is record.
 
 Write updated STATE.md.
 </step>
@@ -295,7 +295,7 @@ Would you like to:
 - Don't remove completed phases (have SUMMARY.md files)
 - Don't remove current or past phases
 - Don't leave gaps in numbering - always renumber
-- Don't add "removed phase" notes to STATE.md - git commit is the record
+- Don't add "removed phase" notes to STATE.md - git commit is record
 - Don't ask about each decimal phase - just renumber them
 - Don't modify completed phase directories
 </anti_patterns>
