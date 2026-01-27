@@ -1,5 +1,7 @@
 # Bash Installation Script for gsd-opencode
 
+(See README_old.md for the original README)
+
 ## Overview
 
 A pure bash drop-in replacement for `npx gsd-opencode` installer adapted using claude-haiku-4.5.
