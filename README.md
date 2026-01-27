@@ -1,6 +1,6 @@
 <div align="left">
 
-# GSD for OpenCode. (Based on TÂCHES v1.9.4 - 2026-01-21)
+# GSD for OpenCode adapted workaround for bash-only install. (Based on TÂCHES v1.9.4 - 2026-01-21) 
 
 **A light-weight and powerful meta-prompting, context engineering and spec-driven development system for Claude Code by TÂCHES. (Adapted for OpenCode by rokicool and enthusiasts)**
 

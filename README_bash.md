@@ -2,7 +2,7 @@
 
 ## Overview
 
-A pure bash drop-in replacement for `npx gsd-opencode` installer.
+A pure bash drop-in replacement for `npx gsd-opencode` installer adapted using claude-haiku-4.5.
 
 **Location:** `gsd-opencode/bin/install.sh`
 
