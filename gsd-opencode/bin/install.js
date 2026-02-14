@@ -179,6 +179,24 @@ function install(isGlobal) {
       : "~/.config/opencode/"
     : "./.opencode/";
 
+  // Validate source directories exist
+  const commandsSrc = path.join(src, "commands", "gsd");
+  const agentsSrc = path.join(src, "agents");
+  const skillSrc = path.join(src, "get-shit-done");
+
+  if (!fs.existsSync(commandsSrc)) {
+    console.error(`  ${yellow}Error: Source directory not found: ${commandsSrc}${reset}`);
+    process.exit(1);
+  }
+  if (!fs.existsSync(agentsSrc)) {
+    console.error(`  ${yellow}Error: Source directory not found: ${agentsSrc}${reset}`);
+    process.exit(1);
+  }
+  if (!fs.existsSync(skillSrc)) {
+    console.error(`  ${yellow}Error: Source directory not found: ${skillSrc}${reset}`);
+    process.exit(1);
+  }
+
   function scanForUnresolvedRepoLocalTokens(destRoot) {
     const tokenRegex = /@gsd-opencode\/|\bgsd-opencode\//g;
     const maxHits = 10;
@@ -247,8 +265,8 @@ function install(isGlobal) {
   const commandsDir = path.join(opencodeDir, "command");
   fs.mkdirSync(commandsDir, { recursive: true });
 
-  // Copy commands/gsd with path replacement
-  const gsdSrc = path.join(src, "command", "gsd");
+  // Copy commands/gsd (source dir is plural) with path replacement
+  const gsdSrc = path.join(src, "commands", "gsd");
   const gsdDest = path.join(commandsDir, "gsd");
   copyWithPathReplacement(gsdSrc, gsdDest, pathPrefix);
   console.log(`  ${green}✓${reset} Installed command/gsd`);
