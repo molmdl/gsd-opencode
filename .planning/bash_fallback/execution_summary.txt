@@ -1,0 +1,163 @@
+╔════════════════════════════════════════════════════════════════════════════╗
+║                 BASH FALLBACK INSTALLATION PLANS COMPLETE                 ║
+║                  All Plans Ready for Execution in New Session              ║
+╚════════════════════════════════════════════════════════════════════════════╝
+
+📍 LOCATION: .planning/bash_fallback/
+
+✅ FILES CREATED:
+────────────────────────────────────────────────────────────────────────────
+1. START_HERE.md                    (227 lines) - Quick overview & entry point
+2. INDEX.md                         (226 lines) - Navigation & file map
+3. README.md                        (259 lines) - Full setup guide
+4. SESSION_1_CRITICAL_FIXES.md      (191 lines) - Critical bug fixes
+5. SESSION_2_DEFENSIVE_ENHANCEMENTS.md (448 lines) - Production enhancements
+6. QUICK_REFERENCE.md               (215 lines) - Code snippets for fast lookup
+7. ANALYSIS_REPORT.md               (374 lines) - Detailed technical analysis
+────────────────────────────────────────────────────────────────────────────
+TOTAL: ~1,940 lines of detailed, actionable plans
+
+📊 ANALYSIS FINDINGS:
+────────────────────────────────────────────────────────────────────────────
+Status: install.sh and install.js are NOT complete mimics
+
+Issues Found:
+  🔴 CRITICAL: Both scripts look for "command/" instead of "commands/"
+  🔴 CRITICAL: install.js lacks source directory validation
+  🟠 MEDIUM: Path prefix logic bug in install.js
+  🟡 LOW: Limited tilde expansion in both scripts
+  🟡 LOW: No error checking on file operations in install.sh
+
+Impact: Both scripts are currently BROKEN and fail immediately
+
+🎯 SOLUTION PROVIDED:
+────────────────────────────────────────────────────────────────────────────
+SESSION 1: Fix Critical Bugs (MUST DO FIRST)
+  Duration: 30-45 minutes
+  Changes: 5 specific changes across 2 files
+  Result: Both scripts work, basic installation succeeds
+
+SESSION 2: Production Enhancements (Recommended)
+  Duration: 45-60 minutes
+  Changes: 8 enhancements to install.sh
+  Result: Production-ready pure-bash installer
+  Features: Better error handling, colored output, edge case handling
+
+📋 HOW TO USE:
+────────────────────────────────────────────────────────────────────────────
+In your next session:
+
+1. Read START_HERE.md (in .planning/bash_fallback/)
+   └─ Takes 5 minutes, tells you exactly what to do
+
+2. Follow the step-by-step instructions in SESSION_1_CRITICAL_FIXES.md
+   └─ Each change is explicitly detailed with line numbers
+   └─ Before/after code shown
+   └─ Verification tests included
+
+3. (Optional) Follow SESSION_2_DEFENSIVE_ENHANCEMENTS.md
+   └─ After SESSION 1 is complete
+   └─ Makes install.sh production-ready
+   └─ Not required, but highly recommended
+
+4. Use QUICK_REFERENCE.md while coding
+   └─ Fast lookup for code snippets
+   └─ Color codes and examples
+   └─ Copy/paste friendly
+
+✨ WHAT YOU'LL ACHIEVE:
+────────────────────────────────────────────────────────────────────────────
+After SESSION 1:
+  ✅ Fixed blocking bugs in both scripts
+  ✅ Both scripts work correctly
+  ✅ Basic pure-bash fallback functional
+  ✅ Installation completes successfully
+
+After SESSION 2:
+  ✅ Production-ready installer
+  ✅ Excellent error handling
+  ✅ Colored, user-friendly output
+  ✅ Handles edge cases (spaces, special chars)
+  ✅ No Node.js dependency required
+  ✅ Best-in-class pure-bash installer
+
+🚀 QUICK START:
+────────────────────────────────────────────────────────────────────────────
+In your next session:
+
+1. cd /path/to/gsd-opencode
+2. Open .planning/bash_fallback/START_HERE.md
+3. Follow the reading order
+4. Execute SESSION 1
+5. (Optional) Execute SESSION 2
+
+Each session is self-contained with complete instructions.
+
+📊 DOCUMENTATION STRUCTURE:
+────────────────────────────────────────────────────────────────────────────
+.planning/bash_fallback/
+├── START_HERE.md                    ← Read this first!
+├── INDEX.md                         ← Complete file map
+├── README.md                        ← Setup & checklist
+├── QUICK_REFERENCE.md               ← Code snippets
+├── SESSION_1_CRITICAL_FIXES.md      ← Execute first
+├── SESSION_2_DEFENSIVE_ENHANCEMENTS.md  ← Execute second
+└── ANALYSIS_REPORT.md               ← Deep analysis
+
+📈 PROGRESS CHECKLIST:
+────────────────────────────────────────────────────────────────────────────
+Session 1 Execution:
+  ☐ Read START_HERE.md
+  ☐ Read SESSION_1_CRITICAL_FIXES.md
+  ☐ Make 5 changes (2 files)
+  ☐ Run verification tests
+  ☐ Verify all success criteria met
+  ☐ Commit changes
+
+Session 2 Execution (Optional):
+  ☐ Read SESSION_2_DEFENSIVE_ENHANCEMENTS.md
+  ☐ Make 8 enhancements (1 file)
+  ☐ Run verification tests
+  ☐ Verify all success criteria met
+  ☐ Commit changes
+
+🎯 KEY TAKEAWAYS:
+────────────────────────────────────────────────────────────────────────────
+1. You have complete execution plans - not just analysis
+2. Each plan includes exact file locations and line numbers
+3. All changes are step-by-step with verification
+4. Plans are detailed but not complex - straightforward fixes
+5. Total execution time: 90-120 minutes for both sessions
+6. Result: Production-ready pure-bash installer without Node.js
+7. All documentation is in .planning/bash_fallback/ ready to use
+
+✅ VERIFICATION:
+────────────────────────────────────────────────────────────────────────────
+All files created successfully:
+  ✓ START_HERE.md (entry point)
+  ✓ INDEX.md (navigation)
+  ✓ README.md (guide)
+  ✓ SESSION_1_CRITICAL_FIXES.md (critical fixes)
+  ✓ SESSION_2_DEFENSIVE_ENHANCEMENTS.md (enhancements)
+  ✓ QUICK_REFERENCE.md (code snippets)
+  ✓ ANALYSIS_REPORT.md (analysis)
+
+Total: 1,940 lines of detailed documentation
+
+🎓 LEARNING OUTCOMES:
+────────────────────────────────────────────────────────────────────────────
+After completing these plans, you will understand:
+  ✅ How to fix blocking bugs in shell scripts
+  ✅ Defensive programming patterns in Bash
+  ✅ Error handling best practices
+  ✅ User experience improvements
+  ✅ How both installers work internally
+
+════════════════════════════════════════════════════════════════════════════
+
+Next Step: In your next session, open:
+  .planning/bash_fallback/START_HERE.md
+
+Good luck! 🚀
+
+════════════════════════════════════════════════════════════════════════════
