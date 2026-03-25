@@ -89,14 +89,20 @@ EDITED_FILES=()
 for file in "${TARGET_FILES[@]}"; do
   echo "   ↳ Updating: $file"
 
-  # 1. Remove old bash declarations
-  $SED_I '/^[ \t]*bash[ \t]*:[ \t]*\(true\|allowed\|allow\)[ \t]*$/d' "$file"
+  # Create the cp- prefixed copy
+  dir=$(dirname "$file")
+  filename=$(basename "$file")
+  COPY_FILE="${dir}/cp-${filename}"
+  cp "$file" "$COPY_FILE"
+
+  # 1. Remove old bash declarations from the copy
+  $SED_I '/^[ \t]*bash[ \t]*:[ \t]*\(true\|allowed\|allow\)[ \t]*$/d' "$COPY_FILE"
   $SED_I '/^[ \t]*tools:[ \t]*$/{
     N
     /bash[ \t]*:[ \t]*true/d
-  }' "$file"
+  }' "$COPY_FILE"
 
-  # 2. Remove any existing bash: subsection inside permission:
+  # 2. Remove any existing bash: subsection inside permission: from the copy
   awk '
     BEGIN { in_perm=0; in_bash=0 }
     /^[ \t]*permission:[ \t]*$/ { in_perm=1; print; next }
@@ -105,9 +111,9 @@ for file in "${TARGET_FILES[@]}"; do
     in_bash && /^[ \t]*}/ { in_bash=0; next }
     in_bash { next }
     { print }
-  ' "$file" > "${file}.tmp" && mv "${file}.tmp" "$file"
+  ' "$COPY_FILE" > "${COPY_FILE}.tmp" && mv "${COPY_FILE}.tmp" "$COPY_FILE"
 
-  # 3. Insert the bash subsection in the correct place (before closing ---)
+  # 3. Insert the bash subsection in the correct place (before closing ---) in the copy
   awk '
     BEGIN { inserted=0; in_frontmatter=0; has_permission=0 }
     # First --- starts the frontmatter
@@ -137,16 +143,17 @@ for file in "${TARGET_FILES[@]}"; do
       next
     }
     { print }
-  ' "$file" > "${file}.tmp" && mv "${file}.tmp" "$file"
+  ' "$COPY_FILE" > "${COPY_FILE}.tmp" && mv "${COPY_FILE}.tmp" "$COPY_FILE"
 
-  EDITED_FILES+=("$file")
+  EDITED_FILES+=("$COPY_FILE")
+  echo "      ✓ Created: $COPY_FILE"
 done
 
 rm -f "$TEMP_BASH"
 
 echo ""
 echo "✅ Update completed successfully!"
-echo "📋 Files edited:"
+echo "📋 cp- prefixed copies created with updated permissions:"
 
 for f in "${EDITED_FILES[@]}"; do
   echo "   • $f"
@@ -154,8 +161,9 @@ done
 
 echo ""
 echo "💡 Next steps:"
-echo "   git diff"
+echo "   diff ${TARGET_FILES[0]} ${EDITED_FILES[0]}  # compare original vs edited copy"
 echo "   git add . && git commit -m 'chore: update bash permissions inside permission: block'"
 echo ""
 echo "The permission: block is now correctly placed **inside** the frontmatter, right before the closing ---."
 echo "No extra --- lines are added, and other permissions are preserved."
+echo "Original files remain unchanged."
