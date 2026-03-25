@@ -1,5 +1,5 @@
 ---
-name: gsd-research-phase
+name: cp-gsd-research-phase
 description: Research how to implement a phase (standalone - usually use /gsd-plan-phase instead)
 argument-hint: "[phase]"
 tools:
@@ -9,7 +9,7 @@ tools:
 ---
 
 <objective>
-Research how to implement a phase. Spawns gsd-phase-researcher agent with phase context.
+Research how to implement a phase. Spawns cp-gsd-phase-researcher agent with phase context.
 
 **Note:** This is a standalone research command. For most workflows, use `/gsd-plan-phase` which integrates research automatically.
 
@@ -45,7 +45,7 @@ Default to "balanced" if not set.
 
 | Agent | quality | balanced | budget |
 |-------|---------|----------|--------|
-| gsd-phase-researcher | opus | sonnet | haiku |
+| cp-gsd-phase-researcher | opus | sonnet | haiku |
 
 Store resolved model for use in Task calls below.
 
@@ -87,7 +87,7 @@ grep -A30 "### Decisions Made" .planning/STATE.md 2>/dev/null
 
 Present summary with phase description, requirements, prior decisions.
 
-## 4. Spawn gsd-phase-researcher Agent
+## 4. Spawn cp-gsd-phase-researcher Agent
 
 Research modes: ecosystem (default), feasibility, implementation, comparison.
 
@@ -194,7 +194,7 @@ Task(
 <success_criteria>
 - [ ] Phase validated against roadmap
 - [ ] Existing research checked
-- [ ] gsd-phase-researcher spawned with context
+- [ ] cp-gsd-phase-researcher spawned with context
 - [ ] Checkpoints handled correctly
 - [ ] User knows next steps
 </success_criteria>

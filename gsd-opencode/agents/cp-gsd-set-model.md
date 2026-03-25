@@ -1,5 +1,5 @@
 ---
-name: gsd-set-model
+name: cp-gsd-set-model
 description: Configure models for a specific profile's stages
 tools:
   read: true

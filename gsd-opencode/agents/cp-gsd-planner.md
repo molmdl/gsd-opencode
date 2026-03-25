@@ -1,5 +1,5 @@
 ---
-name: gsd-planner
+name: cp-gsd-planner
 description: Creates executable phase plans with task breakdown, dependency analysis, and goal-backward verification. Spawned by /gsd-plan-phase orchestrator.
 tools:
   read: true

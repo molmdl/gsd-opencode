@@ -113,7 +113,12 @@ for file in "${TARGET_FILES[@]}"; do
     { print }
   ' "$COPY_FILE" > "${COPY_FILE}.tmp" && mv "${COPY_FILE}.tmp" "$COPY_FILE"
 
-  # 3. Insert the bash subsection in the correct place (before closing ---) in the copy
+  # 3. Update the name: field in frontmatter to match new filename
+  # Extract new name from filename (remove .md extension)
+  NEW_NAME=$(basename "$COPY_FILE" .md)
+  $SED_I "s/^name:[[:space:]]*.*/name: $NEW_NAME/" "$COPY_FILE"
+
+  # 4. Insert the bash subsection in the correct place (before closing ---) in the copy
   awk '
     BEGIN { inserted=0; in_frontmatter=0; has_permission=0 }
     # First --- starts the frontmatter

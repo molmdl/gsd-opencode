@@ -1,8 +1,8 @@
 ---
-name: gsd-plan-phase
+name: cp-gsd-plan-phase
 description: Create detailed execution plan for a phase (PLAN.md) with verification loop
 argument-hint: "[phase] [--research] [--skip-research] [--gaps] [--skip-verify]"
-agent: gsd-planner
+agent: cp-gsd-planner
 tools:
   - read
   - write
@@ -23,7 +23,7 @@ Create executable phase prompts (PLAN.md files) for a roadmap phase with integra
 
 **Default flow:** Research (if needed) → Plan → Verify → Done
 
-**Orchestrator role:** Parse arguments, validate phase, research domain (unless skipped or exists), spawn gsd-planner agent, verify plans with gsd-plan-checker, iterate until plans pass or max iterations reached, present results.
+**Orchestrator role:** Parse arguments, validate phase, research domain (unless skipped or exists), spawn cp-gsd-planner agent, verify plans with cp-gsd-plan-checker, iterate until plans pass or max iterations reached, present results.
 
 **Why subagents:** Research and planning burn context fast. Verification uses fresh context. User sees the flow between agents in main context.
 </objective>
@@ -62,9 +62,9 @@ Default to "balanced" if not set.
 
 | Agent | quality | balanced | budget |
 |-------|---------|----------|--------|
-| gsd-phase-researcher | opus | sonnet | haiku |
-| gsd-planner | opus | opus | sonnet |
-| gsd-plan-checker | sonnet | sonnet | haiku |
+| cp-gsd-phase-researcher | opus | sonnet | haiku |
+| cp-gsd-planner | opus | opus | sonnet |
+| cp-gsd-plan-checker | sonnet | sonnet | haiku |
 
 Store resolved models for use in Task calls below.
 
@@ -158,7 +158,7 @@ Display stage banner:
 
 Proceed to spawn researcher
 
-### Spawn gsd-phase-researcher
+### Spawn cp-gsd-phase-researcher
 
 Gather context for research prompt:
 
@@ -251,7 +251,7 @@ VERIFICATION_CONTENT=$(cat "${PHASE_DIR}"/*-VERIFICATION.md 2>/dev/null)
 UAT_CONTENT=$(cat "${PHASE_DIR}"/*-UAT.md 2>/dev/null)
 ```
 
-## 8. Spawn gsd-planner Agent
+## 8. Spawn cp-gsd-planner Agent
 
 Display stage banner:
 ```
@@ -341,7 +341,7 @@ Parse planner output:
 - Offer: Add context, Retry, Manual
 - Wait for user response
 
-## 10. Spawn gsd-plan-checker Agent
+## 10. Spawn cp-gsd-plan-checker Agent
 
 Display:
 ```
@@ -420,7 +420,7 @@ read current plans for revision context:
 PLANS_CONTENT=$(cat "${PHASE_DIR}"/*-PLAN.md 2>/dev/null)
 ```
 
-Spawn gsd-planner with revision prompt:
+Spawn cp-gsd-planner with revision prompt:
 
 ```markdown
 <revision_context>
@@ -514,11 +514,11 @@ Verification: {Passed | Passed with override | Skipped}
 - [ ] Phase validated against roadmap
 - [ ] Phase directory created if needed
 - [ ] Research completed (unless --skip-research or --gaps or exists)
-- [ ] gsd-phase-researcher spawned if research needed
+- [ ] cp-gsd-phase-researcher spawned if research needed
 - [ ] Existing plans checked
-- [ ] gsd-planner spawned with context (including RESEARCH.md if available)
+- [ ] cp-gsd-planner spawned with context (including RESEARCH.md if available)
 - [ ] Plans created (PLANNING COMPLETE or CHECKPOINT handled)
-- [ ] gsd-plan-checker spawned (unless --skip-verify)
+- [ ] cp-gsd-plan-checker spawned (unless --skip-verify)
 - [ ] Verification passed OR user override OR max iterations with user decision
 - [ ] User sees status between agent spawns
 - [ ] User knows next steps (execute or review)

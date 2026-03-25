@@ -1,5 +1,5 @@
 ---
-name: gsd-execute-phase
+name: cp-gsd-execute-phase
 description: Execute all plans in a phase with wave-based parallelization
 argument-hint: "<phase-number> [--gaps-only]"
 tools:
@@ -51,8 +51,8 @@ Phase: `$ARGUMENTS`
 
    | Agent | quality | balanced | budget |
    |-------|---------|----------|--------|
-   | gsd-executor | opus | sonnet | sonnet |
-   | gsd-verifier | sonnet | sonnet | haiku |
+   | cp-gsd-executor | opus | sonnet | sonnet |
+   | cp-gsd-verifier | sonnet | sonnet | haiku |
 
    Store resolved models for use in Task calls below.
 
@@ -74,7 +74,7 @@ Phase: `$ARGUMENTS`
 
 4. **Execute waves**
    For each wave in order:
-   - Spawn `gsd-executor` for each plan in wave (parallel Task calls)
+   - Spawn `cp-gsd-executor` for each plan in wave (parallel Task calls)
    - Wait for completion (Task blocks)
    - Verify SUMMARYs created
    - Proceed to next wave
@@ -102,7 +102,7 @@ Phase: `$ARGUMENTS`
    **If `workflow.verifier` is `false`:** Skip to step 8 (treat as passed).
 
    **Otherwise:**
-   - Spawn `gsd-verifier` subagent with phase directory and goal
+   - Spawn `cp-gsd-verifier` subagent with phase directory and goal
    - Verifier checks must_haves against actual codebase (not SUMMARY claims)
    - Creates VERIFICATION.md with detailed report
    - Route by status:

@@ -1,5 +1,5 @@
 ---
-name: gsd-new-milestone
+name: cp-gsd-new-milestone
 description: Start a new milestone cycle — update PROJECT.md and route to requirements
 argument-hint: "[milestone name, e.g., 'v1.1 Notifications']"
 tools:
@@ -136,9 +136,9 @@ Default to "balanced" if not set.
 
 | Agent | quality | balanced | budget |
 |-------|---------|----------|--------|
-| gsd-project-researcher | opus | sonnet | haiku |
-| gsd-research-synthesizer | sonnet | sonnet | haiku |
-| gsd-roadmapper | opus | sonnet | sonnet |
+| cp-gsd-project-researcher | opus | sonnet | haiku |
+| cp-gsd-research-synthesizer | sonnet | sonnet | haiku |
+| cp-gsd-roadmapper | opus | sonnet | sonnet |
 
 Store resolved models for use in Task calls below.
 
@@ -176,7 +176,7 @@ Display spawning indicator:
   → Pitfalls research
 ```
 
-Spawn 4 parallel gsd-project-researcher agents with milestone-aware context:
+Spawn 4 parallel cp-gsd-project-researcher agents with milestone-aware context:
 
 ```
 Task(prompt="
@@ -533,7 +533,7 @@ Display stage banner:
 read MILESTONES.md to find the last phase number from previous milestone.
 New phases continue from there (e.g., if v1.0 ended at phase 5, v1.1 starts at phase 6).
 
-Spawn gsd-roadmapper agent with context:
+Spawn cp-gsd-roadmapper agent with context:
 
 ```
 Task(prompt="
@@ -710,7 +710,7 @@ Present completion with next steps:
 - [ ] Requirements gathered (from research or conversation)
 - [ ] User scoped each category
 - [ ] REQUIREMENTS.md created with REQ-IDs
-- [ ] gsd-roadmapper spawned with phase numbering context
+- [ ] cp-gsd-roadmapper spawned with phase numbering context
 - [ ] Roadmap files written immediately (not draft)
 - [ ] User feedback incorporated (if any)
 - [ ] ROADMAP.md created with phases continuing from previous milestone

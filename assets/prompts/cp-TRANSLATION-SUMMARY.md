@@ -100,7 +100,7 @@ All 11 subagents translated with updated frontmatter format:
 **Before (Claude Code):**
 ```yaml
 ---
-name: gsd-project-researcher
+name: cp-TRANSLATION-SUMMARY
 description: Researches domain ecosystem
 tools: read, write, bash, grep, glob, webfetch, (optional MCP tool)
 color: cyan
@@ -110,7 +110,7 @@ color: cyan
 **After (OpenCode):**
 ```yaml
 ---
-name: gsd-project-researcher
+name: cp-TRANSLATION-SUMMARY
 description: Researches domain ecosystem
 tools:
   read: true

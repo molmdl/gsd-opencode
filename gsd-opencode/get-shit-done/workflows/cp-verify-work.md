@@ -33,8 +33,8 @@ Default to "balanced" if not set.
 
 | Agent | quality | balanced | budget |
 |-------|---------|----------|--------|
-| gsd-planner | opus | opus | sonnet |
-| gsd-plan-checker | sonnet | sonnet | haiku |
+| cp-gsd-planner | opus | opus | sonnet |
+| cp-gsd-plan-checker | sonnet | sonnet | haiku |
 
 Store resolved models for use in Task calls below.
 </step>
@@ -381,7 +381,7 @@ Display:
 ◆ Spawning planner for gap closure...
 ```
 
-Spawn gsd-planner in --gaps mode:
+Spawn cp-gsd-planner in --gaps mode:
 
 ```
 Task(
@@ -432,7 +432,7 @@ Display:
 
 Initialize: `iteration_count = 1`
 
-Spawn gsd-plan-checker:
+Spawn cp-gsd-plan-checker:
 
 ```
 Task(
@@ -471,7 +471,7 @@ On return:
 
 Display: `Sending back to planner for revision... (iteration {N}/3)`
 
-Spawn gsd-planner with revision context:
+Spawn cp-gsd-planner with revision context:
 
 ```
 Task(
@@ -589,8 +589,8 @@ Default to **major** if unclear. User can correct if needed.
 - [ ] Batched writes: on issue, every 5 passes, or completion
 - [ ] Committed on completion
 - [ ] If issues: parallel debug agents diagnose root causes
-- [ ] If issues: gsd-planner creates fix plans (gap_closure mode)
-- [ ] If issues: gsd-plan-checker verifies fix plans
+- [ ] If issues: cp-gsd-planner creates fix plans (gap_closure mode)
+- [ ] If issues: cp-gsd-plan-checker verifies fix plans
 - [ ] If issues: revision loop until plans pass (max 3 iterations)
 - [ ] Ready for `/gsd-execute-phase --gaps-only` when complete
 </success_criteria>

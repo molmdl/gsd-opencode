@@ -267,8 +267,6 @@ git commit -m "$(cat <<'EOF'
 docs(quick-${next_num}): ${DESCRIPTION}
 
 Quick task completed.
-
-Co-Authored-By: OpenCode Opus 4.5 <noreply@anthropic.com>
 EOF
 )"
 ```

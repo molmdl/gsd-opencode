@@ -1,5 +1,5 @@
 ---
-name: gsd-audit-milestone
+name: cp-gsd-audit-milestone
 description: Audit milestone completion against original intent before archiving
 argument-hint: "[version]"
 tools:
@@ -18,7 +18,7 @@ Verify milestone achieved its definition of done. Check requirements coverage, c
 </objective>
 
 <execution_context>
-<!-- Spawns gsd-integration-checker agent which has all audit expertise baked in -->
+<!-- Spawns cp-gsd-integration-checker agent which has all audit expertise baked in -->
 </execution_context>
 
 <context>
@@ -53,7 +53,7 @@ Default to "balanced" if not set.
 
 | Agent | quality | balanced | budget |
 |-------|---------|----------|--------|
-| gsd-integration-checker | sonnet | sonnet | haiku |
+| cp-gsd-integration-checker | sonnet | sonnet | haiku |
 
 Store resolved model for use in Task call below.
 

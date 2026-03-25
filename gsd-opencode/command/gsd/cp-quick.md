@@ -1,5 +1,5 @@
 ---
-name: gsd-quick
+name: cp-gsd-quick
 description: Execute a quick task with GSD guarantees (atomic commits, state tracking) but skip optional agents
 argument-hint: ""
 tools:
@@ -17,8 +17,8 @@ tools:
 Execute small, ad-hoc tasks with GSD guarantees (atomic commits, STATE.md tracking) while skipping optional agents (research, plan-checker, verifier).
 
 Quick mode is the same system with a shorter path:
-- Spawns gsd-planner (quick mode) + gsd-executor(s)
-- Skips gsd-phase-researcher, gsd-plan-checker, gsd-verifier
+- Spawns cp-gsd-planner (quick mode) + cp-gsd-executor(s)
+- Skips cp-gsd-phase-researcher, cp-gsd-plan-checker, cp-gsd-verifier
 - Quick tasks live in `.planning/quick/` separate from planned phases
 - Updates STATE.md "Quick Tasks Completed" table (NOT ROADMAP.md)
 
@@ -48,8 +48,8 @@ Default to "balanced" if not set.
 
 | Agent | quality | balanced | budget |
 |-------|---------|----------|--------|
-| gsd-planner | opus | opus | sonnet |
-| gsd-executor | opus | sonnet | sonnet |
+| cp-gsd-planner | opus | opus | sonnet |
+| cp-gsd-executor | opus | sonnet | sonnet |
 
 Store resolved models for use in Task calls below.
 
@@ -137,7 +137,7 @@ Store `$QUICK_DIR` for use in orchestration.
 
 **Step 5: Spawn planner (quick mode)**
 
-Spawn gsd-planner with quick mode context:
+Spawn cp-gsd-planner with quick mode context:
 
 ```
 Task(
@@ -182,7 +182,7 @@ If plan not found, error: "Planner failed to create ${next_num}-PLAN.md"
 
 **Step 6: Spawn executor**
 
-Spawn gsd-executor with plan reference:
+Spawn cp-gsd-executor with plan reference:
 
 ```
 Task(
@@ -267,8 +267,6 @@ git commit -m "$(cat <<'EOF'
 docs(quick-${next_num}): ${DESCRIPTION}
 
 Quick task completed.
-
-Co-Authored-By: OpenCode Opus 4.5 <noreply@anthropic.com>
 EOF
 )"
 ```

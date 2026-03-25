@@ -1,5 +1,5 @@
 ---
-name: gsd-phase-researcher
+name: cp-gsd-phase-researcher
 description: Researches how to implement a phase before planning. Produces RESEARCH.md consumed by gsd-planner. Spawned by /gsd-plan-phase orchestrator.
 tools:
   read: true

@@ -1,5 +1,5 @@
 ---
-name: gsd-debug
+name: cp-gsd-debug
 description: Systematic debugging with persistent state across context resets
 argument-hint: [issue description]
 tools:
@@ -12,7 +12,7 @@ tools:
 <objective>
 Debug issues using scientific method with subagent isolation.
 
-**Orchestrator role:** Gather symptoms, spawn gsd-debugger agent, handle checkpoints, spawn continuations.
+**Orchestrator role:** Gather symptoms, spawn cp-gsd-debugger agent, handle checkpoints, spawn continuations.
 
 **Why subagent:** Investigation burns context fast (reading files, forming hypotheses, testing). Fresh 200k context per investigation. Main context stays lean for user interaction.
 </objective>
@@ -42,7 +42,7 @@ Default to "balanced" if not set.
 
 | Agent | quality | balanced | budget |
 |-------|---------|----------|--------|
-| gsd-debugger | opus | sonnet | sonnet |
+| cp-gsd-debugger | opus | sonnet | sonnet |
 
 Store resolved model for use in Task calls below.
 
@@ -67,7 +67,7 @@ Use question for each:
 
 After all gathered, confirm ready to investigate.
 
-## 3. Spawn gsd-debugger Agent
+## 3. Spawn cp-gsd-debugger Agent
 
 Fill prompt and spawn:
 
@@ -163,7 +163,7 @@ Task(
 <success_criteria>
 - [ ] Active sessions checked
 - [ ] Symptoms gathered (if new)
-- [ ] gsd-debugger spawned with context
+- [ ] cp-gsd-debugger spawned with context
 - [ ] Checkpoints handled correctly
 - [ ] Root cause confirmed before fixing
 </success_criteria>

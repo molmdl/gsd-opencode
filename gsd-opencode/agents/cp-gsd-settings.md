@@ -1,5 +1,5 @@
 ---
-name: gsd-settings
+name: cp-gsd-settings
 description: Interactive settings for model profiles, per-stage overrides, and workflow settings
 tools:
   read: true

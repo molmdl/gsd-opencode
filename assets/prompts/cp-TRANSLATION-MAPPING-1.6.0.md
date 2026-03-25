@@ -74,7 +74,7 @@ Example of the Custom Agent header:
 
 ``` yaml
 ---
-name: gsd-project-researcher
+name: cp-TRANSLATION-MAPPING-1.6.0
 description: Researches domain ecosystem before roadmap creation. Produces files in .planning/research/ consumed during roadmap creation. Spawned by /gsd-new-project or /gsd-new-milestone orchestrators.
 tools: read, write, bash, grep, glob, webfetch, (optional MCP tool)
 color: cyan
@@ -104,7 +104,7 @@ permission:
 
 ```yaml
 ---
-name: gsd-project-researcher
+name: cp-TRANSLATION-MAPPING-1.6.0
 description: Researches domain ecosystem before roadmap creation. Produces files in .planning/research/ consumed during roadmap creation. Spawned by /gsd-new-project or /gsd-new-milestone orchestrators.
 tools:
   read: true

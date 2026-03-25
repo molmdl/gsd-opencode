@@ -26,8 +26,8 @@ Default to "balanced" if not set.
 
 | Agent | quality | balanced | budget |
 |-------|---------|----------|--------|
-| gsd-executor | opus | sonnet | sonnet |
-| gsd-verifier | sonnet | sonnet | haiku |
+| cp-gsd-executor | opus | sonnet | sonnet |
+| cp-gsd-verifier | sonnet | sonnet | haiku |
 | general | — | — | — |
 
 Store resolved models for use in Task calls below.

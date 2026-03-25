@@ -1,5 +1,5 @@
 ---
-name: gsd-new-project
+name: cp-gsd-new-project
 description: Initialize a new project with deep context gathering and PROJECT.md
 tools:
   - read
@@ -415,17 +415,17 @@ Write `opencode.json`:
 {
   "$schema": "https://opencode.ai/config.json",
   "agent": {
-    "gsd-planner": { "model": "{planning model}" },
-    "gsd-plan-checker": { "model": "{planning model}" },
-    "gsd-phase-researcher": { "model": "{planning model}" },
-    "gsd-roadmapper": { "model": "{planning model}" },
-    "gsd-project-researcher": { "model": "{planning model}" },
-    "gsd-research-synthesizer": { "model": "{planning model}" },
-    "gsd-codebase-mapper": { "model": "{planning model}" },
-    "gsd-executor": { "model": "{execution model}" },
-    "gsd-debugger": { "model": "{execution model}" },
-    "gsd-verifier": { "model": "{verification model}" },
-    "gsd-integration-checker": { "model": "{verification model}" }
+    "cp-gsd-planner": { "model": "{planning model}" },
+    "cp-gsd-plan-checker": { "model": "{planning model}" },
+    "cp-gsd-phase-researcher": { "model": "{planning model}" },
+    "cp-gsd-roadmapper": { "model": "{planning model}" },
+    "cp-gsd-project-researcher": { "model": "{planning model}" },
+    "cp-gsd-research-synthesizer": { "model": "{planning model}" },
+    "cp-gsd-codebase-mapper": { "model": "{planning model}" },
+    "cp-gsd-executor": { "model": "{execution model}" },
+    "cp-gsd-debugger": { "model": "{execution model}" },
+    "cp-gsd-verifier": { "model": "{verification model}" },
+    "cp-gsd-integration-checker": { "model": "{verification model}" }
   }
 }
 ```
@@ -455,9 +455,9 @@ Default to "balanced" if not set.
 
 | Agent | quality | balanced | budget |
 |-------|---------|----------|--------|
-| gsd-project-researcher | opus | sonnet | haiku |
-| gsd-research-synthesizer | sonnet | sonnet | haiku |
-| gsd-roadmapper | opus | sonnet | sonnet |
+| cp-gsd-project-researcher | opus | sonnet | haiku |
+| cp-gsd-research-synthesizer | sonnet | sonnet | haiku |
+| cp-gsd-roadmapper | opus | sonnet | sonnet |
 
 Store resolved models for use in Task calls below.
 
@@ -501,7 +501,7 @@ Display spawning indicator:
   → Pitfalls research
 ```
 
-Spawn 4 parallel gsd-project-researcher agents with rich context:
+Spawn 4 parallel cp-gsd-project-researcher agents with rich context:
 
 ```
 Task(prompt="
@@ -856,7 +856,7 @@ Display stage banner:
 ◆ Spawning roadmapper...
 ```
 
-Spawn gsd-roadmapper agent with context:
+Spawn cp-gsd-roadmapper agent with context:
 
 ```
 Task(prompt="
@@ -1056,7 +1056,7 @@ Present completion with next steps:
 - [ ] Requirements gathered (from research or conversation)
 - [ ] User scoped each category (v1/v2/out of scope)
 - [ ] REQUIREMENTS.md created with REQ-IDs → **committed**
-- [ ] gsd-roadmapper spawned with context
+- [ ] cp-gsd-roadmapper spawned with context
 - [ ] Roadmap files written immediately (not draft)
 - [ ] User feedback incorporated (if any)
 - [ ] ROADMAP.md created with phases, requirement mappings, success criteria
