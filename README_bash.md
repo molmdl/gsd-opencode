@@ -1,6 +1,6 @@
 # Bash Installation Script for gsd-opencode
 
-(See README_old.md for the original README)
+(See README.md.upstream for the original README)
 
 ## Overview
 
